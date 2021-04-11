@@ -1,0 +1,356 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x448202A5D717F912",
+      "device": "xc7z020iclg400-1L",
+      "name": "BD",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "people_counter": "",
+      "slice_0": "",
+      "slice_1": "",
+      "slice_2": "",
+      "slice_3": "",
+      "and_1": "",
+      "and_2": "",
+      "and_3": "",
+      "not_1": "",
+      "xor_1": "",
+      "not_2": "",
+      "and_4": "",
+      "and_5": ""
+    },
+    "ports": {
+      "People": {
+        "type": "data",
+        "direction": "O",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "xilinx.com:interface:datatypes:1.0 {DATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value data} bitwidth {attribs {resolve_type generated dependency bitwidth format long minimum {} maximum {}} value 4} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value false}}}} DATA_WIDTH 4}",
+            "value_src": "ip_prop"
+          }
+        }
+      },
+      "Door_out": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "T": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      },
+      "CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "BD_CLK"
+          },
+          "FREQ_HZ": {
+            "value": "10000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "Ent": {
+        "direction": "I",
+        "left": "0",
+        "right": "0"
+      }
+    },
+    "components": {
+      "people_counter": {
+        "vlnv": "xilinx.com:ip:c_counter_binary:12.0",
+        "xci_name": "BD_c_counter_binary_0_0",
+        "parameters": {
+          "CE": {
+            "value": "true"
+          },
+          "Count_Mode": {
+            "value": "UPDOWN"
+          },
+          "Output_Width": {
+            "value": "4"
+          },
+          "SCLR": {
+            "value": "true"
+          }
+        }
+      },
+      "slice_0": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "BD_xlslice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "0"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "4"
+          }
+        }
+      },
+      "slice_1": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "BD_slice_0_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "1"
+          },
+          "DIN_TO": {
+            "value": "1"
+          },
+          "DIN_WIDTH": {
+            "value": "4"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "slice_2": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "BD_slice_0_1",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "2"
+          },
+          "DIN_TO": {
+            "value": "2"
+          },
+          "DIN_WIDTH": {
+            "value": "4"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "slice_3": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "BD_slice_0_2",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "3"
+          },
+          "DIN_TO": {
+            "value": "3"
+          },
+          "DIN_WIDTH": {
+            "value": "4"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "and_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_util_vector_logic_0_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "and_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_and_1_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "and_3": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_and_1_2",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "not_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_and_3_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "xor_1": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_util_vector_logic_0_1",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "xor"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "not_2": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_not_1_0",
+        "parameters": {
+          "C_OPERATION": {
+            "value": "not"
+          },
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "and_4": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_and_2_0",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      },
+      "and_5": {
+        "vlnv": "xilinx.com:ip:util_vector_logic:2.0",
+        "xci_name": "BD_and_3_1",
+        "parameters": {
+          "C_SIZE": {
+            "value": "1"
+          }
+        }
+      }
+    },
+    "nets": {
+      "slice_0_Dout": {
+        "ports": [
+          "slice_0/Dout",
+          "and_1/Op1"
+        ]
+      },
+      "slice_1_Dout": {
+        "ports": [
+          "slice_1/Dout",
+          "and_1/Op2"
+        ]
+      },
+      "slice_2_Dout": {
+        "ports": [
+          "slice_2/Dout",
+          "and_2/Op1"
+        ]
+      },
+      "slice_3_Dout": {
+        "ports": [
+          "slice_3/Dout",
+          "and_2/Op2"
+        ]
+      },
+      "and_2_Res": {
+        "ports": [
+          "and_2/Res",
+          "and_3/Op2"
+        ]
+      },
+      "and_1_Res": {
+        "ports": [
+          "and_1/Res",
+          "and_3/Op1"
+        ]
+      },
+      "and_3_Res": {
+        "ports": [
+          "and_3/Res",
+          "not_1/Op1"
+        ]
+      },
+      "people_counter_Q": {
+        "ports": [
+          "people_counter/Q",
+          "People",
+          "slice_0/Din",
+          "slice_1/Din",
+          "slice_2/Din",
+          "slice_3/Din"
+        ]
+      },
+      "xor_1_Res": {
+        "ports": [
+          "xor_1/Res",
+          "people_counter/CE"
+        ]
+      },
+      "Door_out_1": {
+        "ports": [
+          "Door_out",
+          "xor_1/Op2"
+        ]
+      },
+      "not_2_Res": {
+        "ports": [
+          "not_2/Res",
+          "people_counter/SCLR"
+        ]
+      },
+      "T_1": {
+        "ports": [
+          "T",
+          "not_2/Op1",
+          "and_5/Op2"
+        ]
+      },
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "people_counter/CLK"
+        ]
+      },
+      "not_1_Res": {
+        "ports": [
+          "not_1/Res",
+          "and_5/Op1"
+        ]
+      },
+      "and_5_Res": {
+        "ports": [
+          "and_5/Res",
+          "and_4/Op2"
+        ]
+      },
+      "Ent_1": {
+        "ports": [
+          "Ent",
+          "and_4/Op1"
+        ]
+      },
+      "and_4_Res": {
+        "ports": [
+          "and_4/Res",
+          "people_counter/UP",
+          "xor_1/Op1"
+        ]
+      }
+    }
+  }
+}
